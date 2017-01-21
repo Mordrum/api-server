@@ -1,0 +1,8 @@
+{
+  "ebean": {
+    "url": "jdbc:h2:mem:tests",
+    "driver": "org.h2.Driver",
+    "username": "sa",
+    "password": ""
+  }
+}

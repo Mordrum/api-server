@@ -1,0 +1,18 @@
+<project>
+    <taskdef
+            name="ebeanEnhance"
+            classname="io.ebean.enhance.ant.AntEnhanceTask"
+            classpath="${cp}" />
+
+    <target name="ormEnhance" depends="compileJava,compileKotlin">
+        <!--
+        classSource: This is the directory that contains your class files. That is, the directory where your IDE will compile your java class files to, or the directory where a previous ant task will compile your java class files to.
+
+        packages: a comma delimited list of packages that contain entity classes. All the classes in these packages are searched for entity classes to be enhanced. transformArgs: This contains a debug level (0 - 10) .
+        -->
+        <ebeanEnhance
+                classSource="${classesDir}"
+                packages="com.mordrum.apiserver.models.*"
+                transformArgs="debug=1"/>
+    </target>
+</project>

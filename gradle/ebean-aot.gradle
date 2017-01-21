@@ -1,0 +1,6 @@
+classes {
+    doLast {
+        ant.taskdef(name: 'ormEnhance', classname: 'io.ebean.enhance.ant.AntEnhanceTask', classpath: configurations.compile.asPath)
+        ant.ormEnhance(classSource: sourceSets.main.output.classesDir, packages: "com.mordrum.apiserver.models.*", transformArgs: "debug=1")
+    }
+}
